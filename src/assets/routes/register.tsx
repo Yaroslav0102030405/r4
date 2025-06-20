@@ -3,9 +3,9 @@ import SignUp from "../../signUp";
 
 const Register = () => {
     return ( <>
-    <h1>Register Page</h1>
+    <h1>Реєстрація</h1>
     <SignUp />
-    <Link to="/login">Register</Link>
+    <Link to="/login">Sign in</Link>
     </> );
 }
  

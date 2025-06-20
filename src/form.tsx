@@ -28,7 +28,9 @@ const Form = ({ title, handleClick }: FormProps) => {
     return ( <>
     <form onSubmit={handleSubmit}>
         <label><input onChange={handleChangeEmail} type="email" value={email}/></label>
+        <br />
         <label><input onChange={handleChangePassword} type="password" value={password}/></label>
+        <br />
         <button type="submit">{title}</button>
         </form></> );
 }

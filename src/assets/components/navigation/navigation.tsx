@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router'
 import routes from '../../routes/routes'
+import { useAuth } from '../../../hooks/user-auth'
+
 const Navigation = () => {
+    const {isAuth} = useAuth()
   return (
     <>
       <ul>
@@ -20,9 +23,9 @@ const Navigation = () => {
             Про нас
           </NavLink>
         </li>
-          <li>
+        { isAuth ? "" : <> <li>
           <NavLink
-            to={routes.login}
+            to={routes.register}
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Сторінка логін
@@ -30,12 +33,28 @@ const Navigation = () => {
         </li>
         <li>
           <NavLink
-            to={routes.register}
+            to={routes.login}
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Сторінка регістрації
           </NavLink>
+        </li></>}
+          {/* <li>
+          <NavLink
+            to={routes.register}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Сторінка логін
+          </NavLink>
         </li>
+        <li>
+          <NavLink
+            to={routes.login}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Сторінка регістрації
+          </NavLink>
+        </li> */}
       </ul>
     </>
   )

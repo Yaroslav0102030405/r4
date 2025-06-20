@@ -17,7 +17,7 @@ const Home = () => {
           </button>
         </div>
       ) : (
-        <Navigate to="/login" replace />
+        <Navigate to="/register" replace />
       )}
           </>
   )
