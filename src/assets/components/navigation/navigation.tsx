@@ -55,6 +55,14 @@ const Navigation = () => {
             Сторінка регістрації
           </NavLink>
         </li> */}
+        <li>
+          <NavLink
+            to={routes.test}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Test
+          </NavLink>
+        </li>
       </ul>
     </>
   )

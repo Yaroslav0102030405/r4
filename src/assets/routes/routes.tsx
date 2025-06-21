@@ -2,5 +2,6 @@ export default {
   home: '/',
   about: '/about',
   login: "/login",
-  register: "/register"
+  register: "/register",
+  test: "/test"
 }
