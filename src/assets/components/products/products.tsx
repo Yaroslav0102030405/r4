@@ -1,13 +1,8 @@
 import ProductList from "./productList";
-
 export interface ProductType {
   id: number;
   name: string;
 }
-
-// interface ProductListProps {
-//   products: ProductType[]; // Масив об'єктів ProductType
-// }
 
 const Product = () => {
     const products = []
