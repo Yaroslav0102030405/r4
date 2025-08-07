@@ -13,6 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Стилі для активної кнопки */
+.active {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

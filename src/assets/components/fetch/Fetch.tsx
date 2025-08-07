@@ -1,4 +1,6 @@
 // import { useState, useEffect } from 'react'
+import type { MouseEvent } from 'react'
+import { useState, useEffect } from 'react'
 
 // // Інтерфейс для користувачів
 // interface User {
@@ -53,8 +55,6 @@
 
 // export default Fetch
 
-import { useState, useEffect } from 'react'
-
 // Інтерфейс для користувачів
 interface User {
   id: number
@@ -81,6 +81,19 @@ const Fetch = () => {
   const [users, setUsers] = useState<User[]>([])
   const [posts, setPosts] = useState<Post[]>([])
   const [todos, setTodos] = useState<Todos[]>([])
+
+  const [activeButtonId, setActiveButtonId] = useState<string | null>(null)
+
+  const handleButtonClick = (event: MouseEvent<HTMLDivElement>) => {
+    const targetElement = event.target as HTMLElement
+
+    if (targetElement.tagName === 'BUTTON') {
+      console.log('Клік на кнопку з ID:', targetElement.id)
+      setActiveButtonId(targetElement.id)
+    } else {
+      setActiveButtonId(null)
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -145,13 +158,37 @@ const Fetch = () => {
         ))}
       </ul>
       <h1>Todos</h1>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            <h3>{todo.title}</h3>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          {todos.map((todo) => (
+            <tr key={todo.id}>
+              <td>{todo.id}</td>
+              <td>{todo.title}</td>
+            </tr>
+          ))}
+        </thead>
+      </table>
+
+      <div onClick={handleButtonClick}>
+        <button
+          id="btn-1"
+          className={activeButtonId === 'btn-1' ? 'active' : ''}
+        >
+          Кнопка 1
+        </button>
+        <button
+          id="btn-2"
+          className={activeButtonId === 'btn-2' ? 'active' : ''}
+        >
+          Кнопка 2
+        </button>
+        <button
+          id="btn-3"
+          className={activeButtonId === 'btn-3' ? 'active' : ''}
+        >
+          Кнопка 3
+        </button>
+      </div>
     </>
   )
 }
