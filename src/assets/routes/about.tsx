@@ -1,5 +1,6 @@
 import Fetch from '../components/fetch/Fetch'
 import Filter from '../components/filter/Filter'
+import Pokemon from '../components/pokemon/Pokemon'
 
 const About = () => {
   return (
@@ -7,6 +8,7 @@ const About = () => {
       <h1>Про нас</h1>
       <Fetch />
       <Filter />
+      <Pokemon />
     </>
   )
 }

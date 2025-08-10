@@ -80,3 +80,74 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Стилі для основного контейнера ul */
+ul {
+  list-style: none; /* Прибираємо стандартні маркери */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Дозволяємо елементам переноситися на новий рядок */
+  justify-content: center; /* Центруємо картки */
+  gap: 20px; /* Відстань між картками */
+}
+
+/* Стилі для кожного елемента списку li */
+li {
+  display: flex;
+  flex-direction: column; /* Елементи всередині li йдуть вертикально */
+  align-items: center; /* Центруємо вміст */
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Закруглені кути */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 150px; /* Фіксована ширина картки */
+  text-align: center;
+  transition: transform 0.2s; /* Плавна анімація при наведенні */
+}
+
+li:hover {
+  transform: translateY(-5px); /* Картка трохи піднімається при наведенні */
+}
+
+/* Стилі для посилань */
+a {
+  text-decoration: none; /* Прибираємо підкреслення */
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: capitalize; /* Перша літера імені покемона буде великою */
+  margin-bottom: 5px;
+}
+
+/* Стилі для зображень */
+img {
+  width: 100px; /* Фіксована ширина зображення */
+  height: auto; /* Автоматична висота */
+}
+
+/* Стилі для форми */
+form {
+  margin: 20px 0;
+  text-align: center;
+}
+
+input,
+button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
