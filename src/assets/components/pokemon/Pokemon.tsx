@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 // Інтерфейс для початкового списку покемонів
 interface PokemonListItem {
@@ -79,6 +79,8 @@ const Pokemon = () => {
     }
   }
 
+  const memoizedPokemonList = useMemo(() => pokemonList, [pokemonList])
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -95,7 +97,7 @@ const Pokemon = () => {
       </form>
 
       <ul>
-        {pokemonList.map((pokemon, index) => (
+        {memoizedPokemonList.map((pokemon, index) => (
           <li key={index}>
             <a href={pokemon.url} target="_blank" rel="noopener noreferrer">
               {pokemon.name}
